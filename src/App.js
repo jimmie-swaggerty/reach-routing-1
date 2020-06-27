@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link, Router, navigate } from '@reach/router';
+import HomeComponent from './Components/HomeComponent';
+import WordComponent from './Components/WordComponent';
+import NumberComponent from './Components/NumberComponent';
+import FormatComponent from './Components/FormatComponent';
+
+const compStyle = {
+  textAlign: 'center'
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={compStyle}>
+        <Link to ="/home">Home</Link>
+        <Router>
+            <HomeComponent path="/home"/>
+            <WordComponent path="/:word"/>
+            <NumberComponent path="/:number"/>
+            <FormatComponent path="/:word/:text/:bg"/>
+        </Router>
     </div>
   );
 }
