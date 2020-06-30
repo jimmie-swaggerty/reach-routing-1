@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, Router, navigate } from '@reach/router';
+import { Link, Router } from '@reach/router';
 import HomeComponent from './Components/HomeComponent';
-import WordComponent from './Components/WordComponent';
-import NumberComponent from './Components/NumberComponent';
+import InputComponent from './Components/InputComponent';
 import FormatComponent from './Components/FormatComponent';
 
 const compStyle = {
@@ -15,8 +14,7 @@ function App() {
         <Link to ="/home">Home</Link>
         <Router>
             <HomeComponent path="/home"/>
-            <WordComponent path="/:word"/>
-            <NumberComponent path="/:number"/>
+            <InputComponent path="/:input"/>
             <FormatComponent path="/:word/:text/:bg"/>
         </Router>
     </div>
@@ -24,3 +22,5 @@ function App() {
 }
 
 export default App;
+
+//same component, if and for return
